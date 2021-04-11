@@ -15,7 +15,7 @@ import { stories as defaultStories } from './data/stories';
 const App = () => {
   // Creating states
   const [stories, setStories] = useState(defaultStories);
-  const [storyCount, setStoryCount] = useState(0);
+  const [storyCount, setStoryCount] = useState(-1);
   const [play, setPlay] = useState(true);
   const [width, setWidth] = useState('600');
 
