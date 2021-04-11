@@ -16,6 +16,8 @@
 
     &__button {
         &--play {
+            opacity: 0;
+            transition: opacity .2s .5s ease-out;
             cursor: pointer;
             position: absolute;
             top: calc(90% - 6.75rem);

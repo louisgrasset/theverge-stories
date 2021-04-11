@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { TimerList } from './components/TimerList';
 import { Story } from './components/Story';
+import { Pause } from './components/Pause';
 
 import iconLogo from './images/theverge.svg';
 import iconMenu from './images/three-dots.svg';
@@ -50,12 +51,13 @@ const App = () => {
             <Story key={k} index={k} story={s} storyCount={storyCount} nextStory={nextStory} togglePlay={togglePlay} play={play} />
           ))
         }
+        {!play && <Pause setPlay={setPlay} />}
 
         <a href="https://theverge.com" rel="noreferrer" target="_blank">
           <img alt="The Verge" className="story__logo" src={iconLogo} />
         </a>
         <img alt="menu" className="story__menu" src={iconMenu} />
-        <button className="story__button--play" onClick={togglePlay}>
+        <button className="story__button story__button--play" onClick={togglePlay}>
           <img alt={play ? "Pause" : "Play"} className="story__button--play-icon" src={play ? iconPause : iconPlay} />
         </button>
       </div>

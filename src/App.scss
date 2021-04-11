@@ -4,4 +4,10 @@
     width: 100%;
     overflow: hidden;
     background-color: #000000;
+    &:hover {
+        .story__button--play {
+            opacity: 1;
+            transition-delay: 0s;
+        }
+    }
 }
