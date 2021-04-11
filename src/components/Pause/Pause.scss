@@ -12,6 +12,7 @@
     align-items: center;
     animation: pause-fade .2s ease-out forwards;
     opacity: 0;
+    z-index: 1;
     @keyframes pause-fade {
         from {
             opacity: 0;

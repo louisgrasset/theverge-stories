@@ -5,8 +5,9 @@
     top: calc(90% - 3.75rem);
     left: 2.25rem;
     width: calc(100% - 4.25rem);
-
+    z-index: 1;
     &::before {
+        z-index: -1;
         position: absolute;
         content: '';
         top: 0;

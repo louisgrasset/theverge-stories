@@ -1,5 +1,4 @@
 import './Pause.scss';
-import iconPlay from '../../images/play.svg';
 
 export const Pause = ({ setPlay }) => {
     return (
