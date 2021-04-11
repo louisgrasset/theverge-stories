@@ -1,0 +1,49 @@
+.timer {
+    $at : &;
+
+    height: 3px;
+    padding: 10px 0;
+    width: 100%;
+
+    cursor: pointer;
+
+    &__background {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(166, 166, 166);
+        position: relative;
+        top: -100%;
+        opacity: .3;
+    }
+
+    &__line {
+        width: 0;
+        height: 100%;
+        background-color: var(--primary);
+        transition: none;
+    }
+
+    &--shown {
+        #{$at} {
+            &__line {   
+                width: 100%;
+            }
+        }
+    }
+
+    &--active {
+        #{$at} {
+            &__line {
+                animation: timer 3s ease-out forwards;
+                @keyframes timer {
+                    from {
+                        width: 0;
+                    }
+                    to {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

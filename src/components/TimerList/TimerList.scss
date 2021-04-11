@@ -1,0 +1,11 @@
+.timer-list {
+    display: flex;
+    margin: 0 10px;
+    z-index: 2;
+    position: relative;
+    margin-bottom: -23px;
+
+    & > *:not(:last-child) {
+        margin-right: 5px;
+    }
+}

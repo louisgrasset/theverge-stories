@@ -1,0 +1,56 @@
+.story {
+    position: relative;
+    height: 100%;
+    &__logo {
+        height: 1.1rem;
+        position: absolute;
+        top: 2.5rem;
+        left: 1.75rem;
+    }
+    &__menu {
+        height: 1.1rem;
+        position: absolute;
+        top: 2.5rem;
+        right: 1.75rem;
+    }
+
+    &__button {
+        &--play {
+            cursor: pointer;
+            position: absolute;
+            top: calc(90% - 6.75rem);
+            left: 1.5rem;
+            width: 2rem;
+            appearance: none;
+            border: none;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            &-icon {
+                height: 2rem;
+                width: 1.5em;
+            }
+        }
+        &--next {
+            cursor: pointer;
+            position: absolute;
+            top: calc(90% - 6.75rem);
+            right: 1.75rem;
+            width: 3rem;
+            background-color: var(--primary);
+            border-radius: 1.5rem;
+            appearance: none;
+            border: none;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            &-icon {
+                height: 2rem;
+                width: 1.5em;
+            }
+        }
+    }
+}

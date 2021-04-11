@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "Silka";
+    src: url("./fonts/silka/silka-black.woff2") format("woff2"),
+        url("./fonts/silka/silka-black.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Silka";
+    src: url("./fonts/silka/silka-bold.woff2") format("woff2"),
+        url("./fonts/silka/silka-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Silka";
+    src: url("./fonts/silka/silka-extralight.woff2") format("woff2"),
+        url("./fonts/silka/silka-extralight.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Silka";
+    src: url("./fonts/silka/silka-light.woff2") format("woff2"),
+        url("./fonts/silka/silka-light.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Silka";
+    src: url("./fonts/silka/silka-medium.woff2") format("woff2"),
+        url("./fonts/silka/silka-medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Silka";
+    src: url("./fonts/silka/silka-regular.woff2") format("woff2"),
+        url("./fonts/silka/silka-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Silka";
+    src: url("./fonts/silka/silka-semibold.woff2") format("woff2"),
+        url("./fonts/silka/silka-semibold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Silka";
+    src: url("./fonts/silka/silka-thin.woff2") format("woff2"),
+        url("./fonts/silka/silka-thin.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+:root {
+    --primary: rgb(226, 18, 122);
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 600px;
+    padding-bottom: 56.25%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
+    animation: slide-in 1s ease-out;
+
+    @keyframes slide-in {
+        from {
+            opacity: 0;
+            transform: translateY(3rem);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
