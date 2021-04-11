@@ -1,5 +1,5 @@
 import './App.scss';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { TimerList } from './components/TimerList';
 import { Story } from './components/Story';
@@ -9,22 +9,21 @@ import iconMenu from './images/three-dots.svg';
 import iconPlay from './images/play.svg';
 import iconPause from './images/pause.svg';
 
-import { stories } from './data/stories';
+import { stories as defaultStories } from './data/stories';
 
 const App = () => {
+  // Creating states
+  const [stories, setStories] = useState(defaultStories);
+  const [storyCount, setStoryCount] = useState(0);
+  const [play, setPlay] = useState(true);
+  const [width, setWidth] = useState('600');
+
   /**
    * Preloading all images from the start
    */
   useEffect(() => {
     stories.forEach(s => new Image().src = s.poster);
-  }, []);
-
-  // Creating states
-  const [storyCount, setStoryCount] = useState(0);
-  const [play, setPlay] = useState(true);
-  const [width, setWidth] = useState('600');
-
-  const story = useMemo(() => stories[storyCount], [storyCount]);
+  }, [stories]);
 
   const nextStory = useCallback(() => storyCount < stories.length - 1 ? setStoryCount(storyCount + 1) : setStoryCount(0), [storyCount]);
   const togglePlay = () => setPlay(!play);
@@ -45,7 +44,7 @@ const App = () => {
   return (
     <div className="wrapper" style={{ width: `${width}px` }}>
       <div className="app">
-        <TimerList story={story} setStoryCount={setStoryCount} storyCount={storyCount} />
+        <TimerList stories={stories} setStoryCount={setStoryCount} storyCount={storyCount} />
         {
           stories.map((s, k) => (
             <Story key={k} index={k} story={s} storyCount={storyCount} nextStory={nextStory} togglePlay={togglePlay} play={play} />

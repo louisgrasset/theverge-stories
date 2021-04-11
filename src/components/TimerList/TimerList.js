@@ -1,13 +1,12 @@
 import './TimerList.scss';
 import { Timer } from '../Timer';
-import { stories } from '../../data/stories';
 
-export const TimerList = ({ story, setStoryCount, storyCount }) => {
+export const TimerList = ({ stories, setStoryCount, storyCount }) => {
     return (
-        <div className="timer-list" data-count={stories.length}>
+        <div className="timer-list">
             {
                 stories.map((s, key) => (
-                    <Timer setStoryCount={setStoryCount} storyCount={storyCount} key={key} k={key} count={story.index} />
+                    <Timer key={key} setStoryCount={setStoryCount} storyCount={storyCount} k={key} />
                 ))
             }
         </div>
