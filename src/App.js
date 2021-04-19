@@ -11,6 +11,7 @@ import iconPlay from './images/play.svg';
 import iconPause from './images/pause.svg';
 
 import { stories as defaultStories } from './data/stories';
+import { Attribution } from './components/Attribution/Attribution';
 
 const App = () => {
   // Creating states
@@ -45,6 +46,7 @@ const App = () => {
   return (
     <div className="wrapper" style={{ width: `${width}px` }}>
       <div className="app">
+        <Attribution />
         <TimerList stories={stories} setStoryCount={setStoryCount} storyCount={storyCount} />
         <StoryList stories={stories} storyCount={storyCount} nextStory={nextStory} togglePlay={togglePlay} play={play} />
         {!play && <Pause setPlay={setPlay} />}
